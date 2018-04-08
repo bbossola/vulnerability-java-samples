@@ -1,0 +1,24 @@
+<configuration scan="true" scanPeriod="10 seconds">
+
+	<!-- main logger -->
+	<appender name="main.appender" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<pattern>%-2(%d{dd MMM yyyy HH:mm:ss.SSS}) %level %class{0} %msg %n</pattern>
+		</encoder>
+
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>INFO</level>
+        </filter>
+
+	</appender>
+
+
+	<!-- general config -->
+	<logger name="org.eclipse" level="ERROR" />
+
+	<root>
+		<level value="INFO" />
+		<appender-ref ref="main.appender" />
+	</root>
+
+</configuration>
